@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+@model bankAccounts.Models.UserViewModel
+
+<a asp-action="Haveaccnt">Already have an account? Log in here!</a>
+<div asp-validation-summary="All"></div>
+<fieldset>
+    <legend><h2>Registration</h2></legend>
+    <form asp-controller="bankAccounts" asp-action="addUser" method="post">
+    <label asp-for="firstName"></label>
+    <input asp-for="firstName"/><br>
+    <label asp-for="lastName"></label>
+    <input asp-for="lastName"/><br>
+    <label asp-for="email"></label>
+    <input asp-for="email"/><br>
+    <label asp-for="password"></label>
+    <input asp-for="password"/><br>
+    <label asp-for="passwordCheck"></label>
+    <input asp-for="passwordCheck"/><br>
+    <button type="submit">Create new User</button>
+</form>
+</fieldset>

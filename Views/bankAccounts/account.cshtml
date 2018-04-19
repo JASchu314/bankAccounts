@@ -1,0 +1,23 @@
+@model bankAccounts.Models.Transaction
+
+<a href="/">Go Home</a>
+<h1>Welcome, @ViewBag.singleUser.firstName</h1>
+<h4>Current balance: @ViewBag.singleUser.balance</h4>
+<fieldset>
+    <form asp-controller="bankAccounts" asp-action="Transact" method="post">
+    <label asp-for="amount"></label>
+    <input type = "number" asp-for="amount"/><br>
+    <button type="submit">Submit</button>
+</form>
+</fieldset>
+<table>
+    <th class="transTable">Amount</th>
+    <th class="transTable">Date</th>
+@foreach(var user in @ViewBag.singleUser.Transactions){
+    <tr class="transTable">
+    <td>@user.amount</td>
+    <td>@user.createdAt.ToString("MMM dd yyyy")</td>
+    
+</tr>
+}
+</table>

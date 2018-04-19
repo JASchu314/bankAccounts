@@ -1,0 +1,14 @@
+@model bankAccounts.Models.loginViewModel
+<a asp-action="Index">Need an account? Register Here!</a><br>
+<fieldset>
+   <span asp-validation-for="email"></span><br>
+   <span asp-validation-for="password"></span>
+    <legend><h2>Log In</h2></legend>
+    <form asp-action="Login">
+    <label asp-for="email"></label>
+    <input asp-for="email"/><br>
+    <label asp-for="password"></label>
+    <input asp-for="password"/><br>
+    <button type="submit">Login</button>
+</form>
+</fieldset>
